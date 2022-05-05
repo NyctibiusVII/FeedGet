@@ -52,7 +52,7 @@ GERAL:
     ✖ - Completar os desafios
 
 DESKTOP:
-    ✖ - NO AR (Online / Vercel)
+    ✔ - NO AR (Online / Vercel)
     ✖ - SEO:
         ✖ - Texto para <noscript />
         ✖ - Shortcut icon
@@ -104,14 +104,11 @@ MOBILE:
 
 NODE:
     ✖ - NO AR (Online / Heroku)
-    ✖ - ORM (Prisma)
+    ✔ - ORM (Prisma)
+    ✔ - Testes (Jest)
     ✖ - Banco de dados:
-        ✖ - ~ *Banco atual*
-        ✖ - Migrar banco de dados de '~' para 'MongoDB'
-        ✖ - MongoDB:
-            ✖ - Guardar dados
-            ✖ - Alterar dados
-            ✖ - Deletar dados
+        ✔ - SQLite *Banco atual*
+        ✖ - Migrar banco de dados de 'SQLite' para 'PostgreSQL ou MongoDB'
 ```
 </details>
 
@@ -122,11 +119,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
     <a href='https://reactjs.org'>React | ^18.0.0</a><br>
     <a href='https://www.typescriptlang.org'>Typescript | ^4.6.3</a><br>
     <a href='https://tailwindcss.com'>Tailwindcss | ^3.0.24</a><br>
-    <a href='https://vitejs.dev/'>Vite | ^2.9.5</a>
+    <a href='https://vitejs.dev'>Vite | ^2.9.5</a>
 </details>
 <details>
     <summary>NODE___</summary>
-    <a href='#'>Null</a><br>
+    <a href='https://nodejs.org/pt-br'>Node | 17.7.1</a><br>
+    <a href='https://www.prisma.io'>Prisma | ^3.13.0</a><br>
+    <a href='https://www.typescriptlang.org'>Typescript | ^4.6.4</a><br>
+    <a href='https://jestjs.io/pt-BR'>Jest | ^28.0.3</a><br>
+    <a href='https://nodemailer.com/about'>Nodemailer | ^6.7.5</a>
 </details>
 <details>
     <summary>MOBILE___</summary>
@@ -183,8 +184,28 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   }
 
   ------- NODE -------
-  "dependencies": { },
-  "devDependencies": { }
+  "dependencies": {
+    "@prisma/client": "^3.13.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "nodemailer": "^6.7.5",
+    "yarn-run-all": "^3.1.1"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.177",
+    "@swc/jest": "^0.2.20",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.5.0",
+    "@types/node": "^17.0.31",
+    "@types/nodemailer": "^6.4.4",
+    "jest": "^28.0.3",
+    "prisma": "^3.13.0",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  }
 
   ------- MOBILE -------
   "dependencies": { },
@@ -223,7 +244,7 @@ $ npm run dev   /   yarn dev     # Para rodar o projeto Node (Backend)
 $ npm run start   /   yarn start # Para o projeto Mobile (Frontend Mobile)
 
 # O ReactJS roda na porta: 3000
-# O NodeJS roda na porta: ~
+# O NodeJS roda na porta: 3333
 # O React Native roda na porta: ~
 
 # Acesse http://localhost:$PORT *Ex: Cuidado para não ligar dois ou mais projetos na mesma porta, pois o servidor pode não iniciar.
@@ -246,7 +267,7 @@ Para ajudar no projeto confira a página de [contribuição](./CONTRIBUTING) par
 |-------|-------------------------------|
 | Dia 1 | #NextLevel                    |
 | Dia 2 | #NeverStopLearning            |
-| Dia 3 | #~                            |
+| Dia 3 | #NewSkills                    |
 | Dia 4 | #~                            |
 | Dia 5 | #~                            |
 
