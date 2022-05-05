@@ -23,3 +23,9 @@ routes.post('/feedbacks', async (req, res) => {
 
     return res.status(201).send()
 })
+routes.get('/feedbacks', (req, res) => {
+    return res.status(200).json({
+        message: 'Connected to the server',
+        status: 'OK'
+    })
+})
