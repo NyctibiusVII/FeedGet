@@ -1,12 +1,13 @@
 import { FormEvent, useState } from 'react'
 
+import { ArrowLeft } from 'phosphor-react'
+
 import { Loading }          from '../../Loading'
 import { CloseButton }      from '../../CloseButton'
 import { ScreenshotButton } from '../ScreenshotButton'
 
 import { feedbackTypes, FeedbackType } from '..'
-
-import { ArrowLeft } from 'phosphor-react'
+import api from '../../../lib/api'
 
 interface FeedbackContentStepProps {
     feedbackType: FeedbackType
@@ -17,19 +18,22 @@ interface FeedbackContentStepProps {
 export function FeedbackContentStep({ feedbackType, onFeedbackRestartRequested, onFeedbackSent }: FeedbackContentStepProps) {
     const feedbackTypeInfo = feedbackTypes[feedbackType]
 
-    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isSendingFeedback, setIsSendingFeedback] = useState(false)
     const [screenshot, setScreenshot]     = useState<string | null>(null)
     const [comment, setComment]           = useState('')
 
-    const handleSubmitFeedback = (e: FormEvent) => {
-        setIsSubmitting(true)
-
+    const handleSubmitFeedback = async (e: FormEvent) => {
+        setIsSendingFeedback(true)
         e.preventDefault()
 
-        setTimeout(() => {
-            onFeedbackSent()
-            setIsSubmitting(false)
-        }, 500)
+        await api.post('/feedbacks', {
+            type: feedbackType,
+            comment,
+            screenshot
+        })
+
+        setIsSendingFeedback(false)
+        onFeedbackSent()
     }
 
     return (
@@ -65,9 +69,9 @@ export function FeedbackContentStep({ feedbackType, onFeedbackRestartRequested, 
                         type='submit'
                         title='Enviar feedback'
                         aria-labelledby='Enviar feedback'
-                        disabled={comment.length === 0}
+                        disabled={comment.length === 0 || isSendingFeedback}
                         className='p-2 bg-brand-500 rounded-md border-transparent flex flex-1 justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors duration-200 ease-in-out disabled:opacity-50 disabled:hover:bg-brand-500'
-                    >{ isSubmitting ? <Loading /> : 'Enviar feedback' }</button>
+                    >{ isSendingFeedback ? <Loading /> : 'Enviar feedback' }</button>
                 </footer>
             </form>
         </>
