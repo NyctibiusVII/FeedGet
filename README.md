@@ -88,19 +88,18 @@ MOBILE:
     ✖ - Melhorar o estilo:
         ✖ - Design
         ✖ - Trocar o tema da aplicação:
-            ✖ - Light
+            ✔ - Light
             ✖ - Dark
             ✖ - Imagens adaptadas para o 'light e dark'
         ✖ - Animações (framer-motion)
         ✖ - Cores:
             ✖ - Adaptadas para daltônicos
-    ✖ - Componentes:
-        ✖ - Widget
-            ✖ - WidgetForm
-                ✖ - FeedbackTypeStep
-                ✖ - FeedbackContentStep
-                    ✖ - ScreenshotButton
-                ✖ - FeedbackSuccessStep
+    ✔ - Componentes:
+        ✔ - Widget
+            ✔ - Options
+            ✔ - Form
+                ✔ - ScreenshotButton
+            ✔ - Success
 
 NODE:
     ✖ - NO AR (Online / Heroku)
@@ -131,7 +130,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 </details>
 <details>
     <summary>MOBILE___</summary>
-    <a href='#'>Null</a><br>
+    <a href='https://expo.dev'>Expo | ~44.0.0</a><br>
+    <a href='https://reactnative.dev'>React Native | 0.64.3</a><br>
+    <a href='https://www.typescriptlang.org'>Typescript | ~4.3.5</a><br>
+    <a href='https://axios-http.com/docs/intro'>Axios | ^0.27.2</a>
 </details>
 
 ## Layout 🚧
@@ -147,9 +149,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
     <!-- IMGS
       ------------------------------
       Widget
-      FeedbackTypeStep
-      FeedbackContentStep
-      FeedbackSuccessStep
+      FeedbackTypeStep    | Options
+      FeedbackContentStep | Form
+      FeedbackSuccessStep | Success
       ------------------------------
     -->
 
@@ -208,8 +210,33 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   }
 
   ------- MOBILE -------
-  "dependencies": { },
-  "devDependencies": { }
+  "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.2",
+    "@gorhom/bottom-sheet": "^4",
+    "axios": "^0.27.2",
+    "expo": "~44.0.0",
+    "expo-app-loading": "~1.3.0",
+    "expo-file-system": "~13.1.4",
+    "expo-font": "~10.0.4",
+    "expo-status-bar": "~1.2.0",
+    "phosphor-react-native": "1.1.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "0.64.3",
+    "react-native-dotenv": "^3.3.1",
+    "react-native-gesture-handler": "~2.1.0",
+    "react-native-iphone-x-helper": "^1.3.1",
+    "react-native-reanimated": "~2.3.1",
+    "react-native-svg": "12.1.1",
+    "react-native-view-shot": "3.1.2",
+    "react-native-web": "0.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "~0.64.12",
+    "typescript": "~4.3.5"
+  }
 ```
 > Ex: `$ npm install _____` ou `$ yarn add _____` para instalar as dependências
 
@@ -226,11 +253,11 @@ $ git clone https://github.com/NyctibiusVII/FeedGet.git
 $ cd FeedGet
 
 # Acesse a pasta do sub-projeto no terminal:
-$ cd web       # Projeto ReactJS
-$ cd node      # Projeto NodeJS
-$ cd mobile    # Projeto React Native
+$ cd web                         # Projeto ReactJS
+$ cd node                        # Projeto NodeJS
+$ cd mobile                      # Projeto React Native
 
-# Instale as dependências com o gerenciador de pacotes de sua preferência (default: Yarn)
+# Instale as dependências com o gerenciador de pacotes de sua preferência
 $ npm install   /   yarn add     # Serve para ReactJS, NodeJS e React Native
 
 # Execute o sub-projeto:
@@ -245,7 +272,7 @@ $ npm run start   /   yarn start # Para o projeto Mobile (Frontend Mobile)
 
 # O ReactJS roda na porta: 3000
 # O NodeJS roda na porta: 3333
-# O React Native roda na porta: ~
+# O React Native roda na porta: 19000
 
 # Acesse http://localhost:$PORT *Ex: Cuidado para não ligar dois ou mais projetos na mesma porta, pois o servidor pode não iniciar.
 ```
@@ -263,13 +290,13 @@ além também de ter a ajuda desta grande comunidade que a Rocketseat construiu 
 Para ajudar no projeto confira a página de [contribuição](./CONTRIBUTING) para ver como começar uma discussão e começar a contribuir.
 
 ### Hashtags \#
-| Dias  | Hashtags                      |
-|-------|-------------------------------|
-| Dia 1 | #NextLevel                    |
-| Dia 2 | #NeverStopLearning            |
-| Dia 3 | #NewSkills                    |
-| Dia 4 | #~                            |
-| Dia 5 | #~                            |
+| Dias  | Hashtags           |
+|-------|--------------------|
+| Dia 1 | #NextLevel         |
+| Dia 2 | #NeverStopLearning |
+| Dia 3 | #NewSkills         |
+| Dia 4 | #StepByStep        |
+| Dia 5 | #~                 |
 
 ## Licença ⚖️
 Este projeto está sob a licença do MIT. Veja o arquivo [LICENSE](https://github.com/NyctibiusVII/FeedGet/blob/main/LICENSE) para mais detalhes.
