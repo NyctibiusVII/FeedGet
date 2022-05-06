@@ -7,8 +7,8 @@
     "test": "jest --no-cache",
     "build": "tsc",
     "dev": "ts-node-dev src/server.ts",
-    "start": "npm-run-all test pos:start",
-    "pos:start":"node ."
+    "pre:start": "npm-run-all build test start",
+    "start": "node ."
   },
   "author": "NyctibiusVII <matheus.dev.07@gmail.com>",
   "license": "MIT",
