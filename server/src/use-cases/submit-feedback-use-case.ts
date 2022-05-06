@@ -35,7 +35,7 @@ export class SubmitFeedbackUseCase {
                     `<h1>Feedback</h1>`,
                     `<p>Tipo: ${type}</p>`,
                     `<p>Comentário: ${comment}</p>`,
-                    screenshot && `<p>Screenshot: ${screenshot}</p>`,
+                    screenshot && (`<p>Screenshot: </p>` && `<img src="${screenshot}" alt="Imagem do print da tela" />`),
                 `</div>`,
             ].join('\n')
         })

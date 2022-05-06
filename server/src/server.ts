@@ -10,7 +10,7 @@ const app = express()
 
 const CORS_ORIGIN = process.env.DEPLOY_URL
 
-app.use(cors({ origin: CORS_ORIGIN }))
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 
