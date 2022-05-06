@@ -10,7 +10,7 @@ import {
 import * as FileSystem   from 'expo-file-system'
 import { captureScreen } from 'react-native-view-shot'
 import { ArrowLeft }     from 'phosphor-react-native'
-import { api }           from '../../libs/api'
+import api               from '../../libs/api'
 
 import { ScreenshotButton } from '../../components/ScreenshotButton'
 import { FeedbackType }     from '../../components/Widget'
