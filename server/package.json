@@ -2,13 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Projeto web construído durante o NLW#08 com a @Rocketseat/Diego Fernandes, Rodrigo Gonçalves. FEEDGET: 'Colete feedback de sua aplicação'. 💬📋📊",
-  "main": "dist/src/server.js",
+  "main": "src/server.ts",
   "scripts": {
     "test": "jest --no-cache",
     "build": "tsc",
     "dev": "ts-node-dev src/server.ts",
     "pre:start": "npm-run-all build test start",
-    "start": "node ."
+    "start": "node dist/src/server.js"
   },
   "author": "NyctibiusVII <matheus.dev.07@gmail.com>",
   "license": "MIT",
