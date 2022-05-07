@@ -8,7 +8,7 @@
     "build": "tsc",
     "dev": "ts-node-dev src/server.ts",
     "pre:start": "npm-run-all build test start",
-    "start": "node dist/src/server.js"
+    "start": "node dist/server.js"
   },
   "author": "NyctibiusVII <matheus.dev.07@gmail.com>",
   "license": "MIT",
